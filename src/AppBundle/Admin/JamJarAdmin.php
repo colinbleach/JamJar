@@ -39,6 +39,7 @@ class JamJarAdmin extends Admin
     {
         $count = (int)$this->getForm()->get('amount')->getData();
 
+        /** @var CloneService $cloneService */
         $cloneService = $this->getConfigurationPool()->getContainer()->get('admin.clone');
 
         $cloneService->cloneObject($object,$count);

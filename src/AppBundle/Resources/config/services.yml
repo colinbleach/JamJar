@@ -18,5 +18,9 @@ services:
                     - { name: sonata.admin, manager_type: orm, label: Jam Year }
 
     admin.clone:
-      class: AppBundle\Service\CloneService
-      arguments: [ '@doctrine.orm.entity_manager' ]
+          class: AppBundle\Service\CloneService
+          arguments: [ '@doctrine.orm.entity_manager', '@admin.perform.clone' ]
+
+    admin.perform.clone:
+              class: AppBundle\Service\CloneFactory
+              arguments: [ '@doctrine.orm.entity_manager' ]

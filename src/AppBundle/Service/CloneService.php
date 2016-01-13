@@ -7,19 +7,21 @@ class CloneService
 {
     protected $em;
 
-    public function __construct(EntityManager $em)
+    /** @var CloneFactory $cloneFactory */
+    protected $cloneFactory;
+
+    public function __construct(EntityManager $em, $cloneFactory)
     {
         $this->em = $em;
+        $this->cloneFactory = $cloneFactory;
     }
 
     public function cloneObject($object,$count)
     {
-        var_dump($count);
         for($i=0; $i < $count; $i++)
         {
-            $this->em->persist(clone($object));
-            var_dump($i);
+            $this->em->persist($this->cloneFactory->cloneObject($object));;
         }
-        $this->em->flush();
     }
+
 }

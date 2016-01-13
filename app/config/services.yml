@@ -1,27 +1,30 @@
+imports:
+    - { resource: "@AppBundle/Resources/config/services.yml" }
+
 # Learn more about services, parameters and containers at
 # http://symfony.com/doc/current/book/service_container.html
 parameters:
 #    parameter_name: value
 
 services:
-    admin.jam_jar:
-            class: AppBundle\Admin\JamJarAdmin
-            arguments: [~, AppBundle\Entity\JamJar, ~]
-            tags:
-                - { name: sonata.admin, manager_type: orm, label: Jam Jar }
-
-    admin.jam_type:
-                class: AppBundle\Admin\JamTypeAdmin
-                arguments: [~, AppBundle\Entity\JamType, ~]
-                tags:
-                    - { name: sonata.admin, manager_type: orm, label: Jam Type }
-
-    admin.jam_year:
-                class: AppBundle\Admin\JamYearAdmin
-                arguments: [~, AppBundle\Entity\JamYear, ~]
-                tags:
-                    - { name: sonata.admin, manager_type: orm, label: Jam Year }
-
-    admin.clone:
-          class: AppBundle\Service\CloneService
-          arguments: [ '@doctrine.orm.entity_manager' ]
+#    admin.jam_jar:
+#            class: AppBundle\Admin\JamJarAdmin
+#            arguments: [~, AppBundle\Entity\JamJar, ~]
+#            tags:
+#                - { name: sonata.admin, manager_type: orm, label: Jam Jar }
+#
+#    admin.jam_type:
+#                class: AppBundle\Admin\JamTypeAdmin
+#                arguments: [~, AppBundle\Entity\JamType, ~]
+#                tags:
+#                    - { name: sonata.admin, manager_type: orm, label: Jam Type }
+#
+#    admin.jam_year:
+#                class: AppBundle\Admin\JamYearAdmin
+#                arguments: [~, AppBundle\Entity\JamYear, ~]
+#                tags:
+#                    - { name: sonata.admin, manager_type: orm, label: Jam Year }
+#
+#    admin.clone:
+#          class: AppBundle\Service\CloneService
+#          arguments: [ '@doctrine.orm.entity_manager' ]
