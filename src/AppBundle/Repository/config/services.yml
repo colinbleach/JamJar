@@ -1,0 +1,18 @@
+services:
+    admin.jam_jar:
+            class: AppBundle\Admin\JamJarAdmin
+            arguments: [~, AppBundle\Entity\JamJar, ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, label: Jam Jar }
+
+    admin.jam_type:
+                class: AppBundle\Admin\JamTypeAdmin
+                arguments: [~, AppBundle\Entity\JamType, ~]
+                tags:
+                    - { name: sonata.admin, manager_type: orm, label: Jam Type }
+
+    admin.jam_year:
+                class: AppBundle\Admin\JamYearAdmin
+                arguments: [~, AppBundle\Entity\JamYear, ~]
+                tags:
+                    - { name: sonata.admin, manager_type: orm, label: Jam Year }
